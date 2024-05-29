@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block list %}
+<div class="col-md-6">
+    <h3>Список студентов {{ group }}</h3>
+    <div class="list-group">
+        {% for student in students %}
+        <a href="{{ student.get_absolute_url }}" class="list-group-item list-group-item-action">{{ student.surname }}
+            {{ student.name }} {{ student.patronymic }}</a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
